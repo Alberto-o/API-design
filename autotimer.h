@@ -8,17 +8,17 @@
 class AutoTimer
 {
 public:
-/// Create a new timer object with a human-readable name
-explicit AutoTimer(const std::string &name);
-/// On destruction, the timer reports how long it was alive
-AutoTimer();
+	/// Create a new timer object with a human-readable name
+	explicit AutoTimer(const std::string &name);
+	/// On destruction, the timer reports how long it was alive
+	~AutoTimer();
 private:
-// Return how long the object has been alive
-double GetElapsed() const;
-std::string mName;
+	// Return how long the object has been alive
+	double GetElapsed() const;
+	std::string mName;
 #ifdef _WIN32
-DWORD mStartTime;
+	DWORD mStartTime;
 #else
-struct timeval mStartTime;
+	struct timeval mStartTime;
 #endif
 };
