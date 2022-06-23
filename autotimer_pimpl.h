@@ -2,10 +2,13 @@
 #include <string>
 class AutoTimer
 {
+
 public:
   explicit AutoTimer(const std::string &name);
   ~AutoTimer();
-  private:
+
+private:
   class Impl;
   Impl *mImpl;
+
 };
